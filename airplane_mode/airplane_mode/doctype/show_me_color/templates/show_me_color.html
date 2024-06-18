@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Rectangle</title>
+    <style>
+        .rectangle {
+            width: 1000px;
+            height: 500px;
+            margin: 50px auto;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- {% set color = frappe.form_dict.get('color') %} -->
+    {% if frappe.form_dict.color %}
+        <div class="rectangle" style="background-color: {{ frappe.form_dict.color }};"></div>
+    {% else %}
+        <div class="rectangle" style="background-color: Black;"></div>
+    {% endif %}
+</body>
+</html>

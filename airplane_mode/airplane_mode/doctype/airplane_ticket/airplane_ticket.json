@@ -1,0 +1,202 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: {flight}-{source_airport_code}-to-{destination_airport_code}-{###}",
+ "creation": "2024-06-06 17:06:46.364457",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "passenger",
+  "status",
+  "column_break_bhpe",
+  "flight",
+  "seat",
+  "section_break_vrts",
+  "source_airport_code",
+  "column_break_gqpk",
+  "destination_airport_code",
+  "section_break_gbpr",
+  "add_ons",
+  "section_break_dubg",
+  "flight_price",
+  "column_break_bmbf",
+  "total_amount",
+  "section_break_jjmy",
+  "departure_time",
+  "departure_date",
+  "column_break_qbvv",
+  "duration_of_flight",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "passenger",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Passenger",
+   "options": "Flight Passenger",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "flight.source_airport_code",
+   "fieldname": "source_airport_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Source Airport Code",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "flight.destination_airport_code",
+   "fieldname": "destination_airport_code",
+   "fieldtype": "Data",
+   "label": "Destination Airport Code",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "flight",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Flight",
+   "options": "Airplane Flight",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "flight.date_of_departure",
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Departure Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "departure_time",
+   "fieldtype": "Time",
+   "label": "Departure Time",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "flight.duration",
+   "fieldname": "duration_of_flight",
+   "fieldtype": "Duration",
+   "label": "Duration of Flight",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_bhpe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_jjmy",
+   "fieldtype": "Section Break",
+   "label": "Departure Details"
+  },
+  {
+   "fieldname": "column_break_qbvv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_vrts",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_gqpk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Booked\nChecked-In\nBoarded",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airplane Ticket",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "flight_price",
+   "fieldtype": "Currency",
+   "label": "Flight Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "section_break_gbpr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "add_ons",
+   "fieldtype": "Table",
+   "label": "Add Ons",
+   "options": "Airplane Ticket Add-on Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "seat",
+   "fieldtype": "Data",
+   "label": "Seat",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_dubg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_bmbf",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-06-07 16:52:37.791367",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Airplane Ticket",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Gray",
+   "title": "Booked"
+  },
+  {
+   "color": "Purple",
+   "title": "Checked-In"
+  },
+  {
+   "color": "Green",
+   "title": "Boarded"
+  }
+ ],
+ "track_changes": 1
+}
